@@ -1,0 +1,194 @@
+﻿@page
+@model Vika_Automate.Pages.ProductionAdminPage.ProductionAdminPageModel
+@{
+    ViewData["Title"] = "Production Admin Panel";
+}
+
+<div class="container text-center">
+    <h1>@ViewData["Title"]</h1>
+    @foreach (var item in Model.Productions.ToList())
+    {
+        var offCanvasRightEdit = "offCanvasRightEdit" + item.IdProduction;
+        var offCanvasLeftProduct = "offCanvasLeftProduct" + item.IdProduction;
+        var offCanvasLeftRaw = "offCanvasLeftRaw" + item.IdProduction;
+        var offCanvasLeftProvider = "offCanvasLeftProvider" + item.IdProduction;
+
+
+        <div class="card m-2">
+            <!--Card Header-->
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5>@item.NameProduction</h5>
+                <div class="btn-group" role="group">
+                    <!--Edit offCanvasRight-->
+                    <button class="btn btn-success"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#@offCanvasRightEdit"
+                            aria-controls="@offCanvasRightEdit">
+                        Edit
+                    </button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1"
+                         id="@offCanvasRightEdit"
+                         aria-labelledby="@offCanvasRightEdit">
+                        <div class="offcanvas-header">
+                            <h1 id="ariaid">@item.NameProduction</h1>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <form asp-page-handler="update" asp-route-id="@item.IdProduction" method="post">
+                                <div class="form-group">
+                                    <label for="Name">Name:</label>
+                                    <input type="text" class="form-control" name="Name" placeholder="@item.NameProduction" value="@item.NameProduction">
+                                </div>
+                                <div class="form-group">
+                                    <label for="City">City:</label>
+                                    <input type="text" class="form-control" name="City" placeholder="@item.ProductionCity" value="@item.ProductionCity">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Product">Product:</label>
+                                    <select class="form-select" name="Product">
+                                        <option value="@item.IdProductNavigation.IdProduct" selected>@item.IdProductNavigation.ProductName</option>
+                                        @foreach (var product in Model.Products.ToList())
+                                        {
+                                            if (!product.ProductName.Equals(item.IdProductNavigation.ProductName))
+                                            {
+                                                <option value="@product.IdProduct">@product.ProductName</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Raw">Raw Material:</label>
+                                    <select class="form-select" name="Raw">
+                                        <option value="@item.IdRawMaterialNavigation.IdRawMaterial" selected>@item.IdRawMaterialNavigation.MaterialName</option>
+                                        @foreach (var material in Model.RawMaterials.ToList())
+                                        {
+                                            if (!material.MaterialName.Equals(item.IdRawMaterialNavigation.MaterialName))
+                                            {
+                                                <option value="@material.IdRawMaterial">@material.MaterialName</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Provider">Provider:</label>
+                                    <select class="form-select" name="Provider">
+                                        <option value="@item.IdProviderNavigation.IdProvider" selected>@item.IdProviderNavigation.FioProvider</option>
+                                        @foreach (var provider in Model.Providers.ToList())
+                                        {
+                                            if (!provider.FioProvider.Equals(item.IdProviderNavigation.FioProvider))
+                                            {
+                                                <option value="@provider.IdProvider">@provider.FioProvider</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="btn-toolbar m-4" role="toolbar">
+                                    <div class="btn-group me-2" role="group">
+                                        <button class="btn btn-success">Edit</button>
+                                    </div>
+                                    <div class="btn-group me-2" role="group">
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas" aria-label="Close">Cancel</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Card Body-->
+            <div class="card-body">
+                <ul class="card-text">
+                    <li class="d-flex">
+                        City: @item.ProductionCity
+                    </li>
+                    <li class="d-flex">
+                        <!--Product offCanvasLeft-->
+                        <a class="pr-2" data-bs-toggle="offcanvas" href="#@offCanvasLeftProduct" aria-controls="@offCanvasLeftProduct">
+                            Product
+                        </a>
+                        <div class="offcanvas offcanvas-start" tabindex="-1"
+                             id="@offCanvasLeftProduct"
+                             aria-labelledby="@offCanvasLeftProduct">
+                            <div class="offcanvas-header">
+                                <h1 id="@offCanvasLeftProduct">Product</h1>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div class="m-2">
+                                    <label>Manufacturer: @item.IdProductNavigation.Manufacturer</label>
+                                </div>
+                                <div class="m-2">
+                                    <label>Product Name: @item.IdProductNavigation.ProductName</label>
+                                </div>
+                                <div class="m-2">
+                                    <label>Vendor Code: @item.IdProductNavigation.VendorCode // Price @item.IdProductNavigation.Price</label>
+                                </div>
+                                <div class="btn-group me-2 m-2" role="group">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas" aria-label="Close">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Raw Material offCanvasLeft-->
+                        <a class="pr-2" data-bs-toggle="offcanvas" href="#@offCanvasLeftRaw" aria-controls="@offCanvasLeftRaw">
+                            Raw Material
+                        </a>
+                        <div class="offcanvas offcanvas-start" tabindex="-1"
+                             id="@offCanvasLeftRaw"
+                             aria-labelledby="@offCanvasLeftRaw">
+                            <div class="offcanvas-header">
+                                <h1 id="@offCanvasLeftRaw">Partner</h1>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div class="m-2">
+                                    <label>Material Name: @item.IdRawMaterialNavigation.MaterialName</label>
+                                </div>
+                                <div class="m-2">
+                                    <label>Volume: @item.IdRawMaterialNavigation.Volume</label>
+                                </div>
+                                <div class="m-2">
+                                    <label>Price: @item.IdRawMaterialNavigation.Price</label>
+                                </div>
+                                <div class="btn-group me-2 m-2" role="group">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas" aria-label="Close">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Provider offCanvasLeft-->
+                        <a class="pr-2" data-bs-toggle="offcanvas" href="#@offCanvasLeftProvider" aria-controls="@offCanvasLeftProvider">
+                            Provider
+                        </a>
+                        <div class="offcanvas offcanvas-start" tabindex="-1"
+                             id="@offCanvasLeftProvider"
+                             aria-labelledby="@offCanvasLeftProvider">
+                            <div class="offcanvas-header">
+                                <h1 id="@offCanvasLeftProvider">Provider</h1>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div class="m-2">
+                                    <label>Name: @item.IdProviderNavigation.FioProvider</label>
+                                </div>
+                                <div class="m-2">
+                                    <label>Phone Number: @item.IdProviderNavigation.PhoneNumber</label>
+                                </div>
+                                <div class="m-2">
+                                    <label>Company Name: @item.IdProviderNavigation.CompanyName</label>
+                                </div>
+                                <div class="btn-group me-2 m-2" role="group">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas" aria-label="Close">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    }
+    <div class="m-2">
+        <form method="post" asp-page-handler="return">
+            <button class="btn btn-primary">Back</button>
+        </form>
+    </div>
+</div>
+

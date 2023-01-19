@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Shop";
+}
+
+<div class="container text-center">
+    <h1>@ViewData["Title"]</h1>
+    @foreach (var item in Model.Products.ToList())
+    {
+        var offCanvasRightEdit = "offCanvasRightEdit" + item.IdProduct;
+        var offCanvasLeftAd = "offCanvasLeftAd" + item.IdProduct;
+        var offCanvasLeftEmp = "offCanvasLeftEmp" + item.IdProduct;
+        var offCanvasLeftProduction = "offCanvasLeftProduction" + item.IdProduct;
+
+
+        <div class="card m-2">
+            <!--Card Header-->
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5>@item.ProductName</h5>
+            </div>
+            <!--Card Body-->
+            <div class="card-body">
+                <ul class="card-text">
+                    <li class="d-flex">
+                        VendorCode: @item.VendorCode // Price: @item.Price
+                    </li>
+                </ul>
+            </div>
+        </div>
+    }
+</div>
+

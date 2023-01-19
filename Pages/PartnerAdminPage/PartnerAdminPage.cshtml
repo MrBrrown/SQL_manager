@@ -1,0 +1,101 @@
+﻿@page
+@model Vika_Automate.Pages.PartnerAdminPage.PartnerAdminPageModel
+@{
+    ViewData["Title"] = "Partner Admin Panel";
+}
+
+
+<div class="container text-center">
+    <h1>@ViewData["Title"]</h1>
+    @foreach (var item in Model.Partenrs.ToList())
+    {
+        var offCanvasRightEdit = "offCanvasRightEdit" + item.IdPartner;
+        var offCanvasLeftAd = "offCanvasLeftProduct" + item.IdPartner;
+
+
+        <div class="card m-2">
+            <!--Card Header-->
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5>@item.FioPartner</h5>
+                <div class="btn-group" role="group">
+                    <!--Edit offCanvasRight-->
+                    <button class="btn btn-success"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#@offCanvasRightEdit"
+                            aria-controls="@offCanvasRightEdit">
+                        Edit
+                    </button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1"
+                         id="@offCanvasRightEdit"
+                         aria-labelledby="@offCanvasRightEdit">
+                        <div class="offcanvas-header">
+                            <h1 id="ariaid">@item.FioPartner</h1>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <form asp-page-handler="update" asp-route-id="@item.IdPartner" method="post">
+                                <div class="form-group">
+                                    <label for="Name">Partner Name:</label>
+                                    <input type="text" class="form-control" name="Name" placeholder="@item.FioPartner" value="@item.FioPartner">
+                                </div>
+                                <div class="form-group">
+                                    <label for="PhoneNumber">Phone Number:</label>
+                                    <input type="text" class="form-control" name="PhoneNumber" placeholder="+70000000000" value="@item.PhoneNumber">
+                                </div>
+                                <div class="btn-toolbar m-4" role="toolbar">
+                                    <div class="btn-group me-2" role="group">
+                                        <button class="btn btn-success">Edit</button>
+                                    </div>
+                                    <div class="btn-group me-2" role="group">
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas" aria-label="Close">Cancel</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Card Body-->
+            <div class="card-body">
+                <ul class="card-text">
+                    <li class="d-flex">
+                        Phone Number: @item.PhoneNumber
+                    </li>
+                    <li class="d-flex">
+                        <!--Product offCanvasLeft-->
+                        <a data-bs-toggle="offcanvas" href="#@offCanvasLeftAd" aria-controls="@offCanvasLeftAd">
+                            Advertisings
+                        </a>
+                        <div class="offcanvas offcanvas-start" tabindex="-1"
+                             id="@offCanvasLeftAd"
+                             aria-labelledby="@offCanvasLeftAd">
+                            <div class="offcanvas-header">
+                                <h1 id="@offCanvasLeftAd">Advertisings</h1>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                @foreach (var ad in item.Advertisings.ToList())
+                                {
+                                    <div class="m-2">
+                                        <label>Format: @ad.AdFormat</label>
+                                    </div>
+                                    <div class="m-2">
+                                        <label>Price: @ad.Price</label>
+                                    </div>
+                                }
+                                <div class="btn-group me-2 m-2" role="group">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas" aria-label="Close">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    }
+    <div class="m-2">
+        <form method="post" asp-page-handler="return">
+            <button class="btn btn-primary">Back</button>
+        </form>
+    </div>
+</div>

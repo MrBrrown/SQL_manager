@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="MySql.EntityFrameworkCore" />
+    <None Remove="Microsoft.EntityFrameworkCore.Design" />
+    <None Remove="Microsoft.EntityFrameworkCore.Tools" />
+    <None Remove="Services\" />
+    <None Remove="MySql.Data" />
+    <None Remove="Services\EmploeeRep\" />
+    <None Remove="Pages\EmploeeAdminPage\" />
+    <None Remove="Services\AdvertisingRep\" />
+    <None Remove="Pages\AdvertisingAdminPage\" />
+    <None Remove="Services\PartnerRep\" />
+    <None Remove="Pages\PartnerAdminPage\" />
+    <None Remove="Services\ProductRep\" />
+    <None Remove="Pages\ProductAdminPage\" />
+    <None Remove="Services\ProductionRep\" />
+    <None Remove="Pages\ProductionAdminPage\" />
+    <None Remove="Services\RawMaterialRep\" />
+    <None Remove="Pages\RawMaterialAdminPage\" />
+    <None Remove="Services\ProviderRep\" />
+    <None Remove="Pages\ProviderAdminPage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Services\EmploeeRep\" />
+    <Folder Include="Pages\EmploeeAdminPage\" />
+    <Folder Include="Services\AdvertisingRep\" />
+    <Folder Include="Pages\AdvertisingAdminPage\" />
+    <Folder Include="Services\PartnerRep\" />
+    <Folder Include="Pages\PartnerAdminPage\" />
+    <Folder Include="Services\ProductRep\" />
+    <Folder Include="Pages\ProductAdminPage\" />
+    <Folder Include="Services\ProductionRep\" />
+    <Folder Include="Pages\ProductionAdminPage\" />
+    <Folder Include="Services\RawMaterialRep\" />
+    <Folder Include="Pages\RawMaterialAdminPage\" />
+    <Folder Include="Services\ProviderRep\" />
+    <Folder Include="Pages\ProviderAdminPage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.4">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="MySql.EntityFrameworkCore" Version="6.0.4" />
+  </ItemGroup>
+</Project>

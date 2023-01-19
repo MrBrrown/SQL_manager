@@ -1,0 +1,72 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Vika_Automate
+build_property.RootNamespace = Vika_Automate
+build_property.ProjectDir = /Users/artemgusev/Projects/Vika_Automate/Vika_Automate/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/artemgusev/Projects/Vika_Automate/Vika_Automate
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/artemgusev/Projects/Vika_Automate/Vika_Automate/Pages/AdminList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW5MaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemgusev/Projects/Vika_Automate/Vika_Automate/Pages/AdvertisingAdminPage/AdvertisingAdminPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWR2ZXJ0aXNpbmdBZG1pblBhZ2UvQWR2ZXJ0aXNpbmdBZG1pblBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemgusev/Projects/Vika_Automate/Vika_Automate/Pages/EmploeeAdminPage/EmploeeAdminPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRW1wbG9lZUFkbWluUGFnZS9FbXBsb2VlQWRtaW5QYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemgusev/Projects/Vika_Automate/Vika_Automate/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemgusev/Projects/Vika_Automate/Vika_Automate/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemgusev/Projects/Vika_Automate/Vika_Automate/Pages/PartnerAdminPage/PartnerAdminPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUGFydG5lckFkbWluUGFnZS9QYXJ0bmVyQWRtaW5QYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemgusev/Projects/Vika_Automate/Vika_Automate/Pages/ProductAdminPage/ProductAdminPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvZHVjdEFkbWluUGFnZS9Qcm9kdWN0QWRtaW5QYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemgusev/Projects/Vika_Automate/Vika_Automate/Pages/ProductionAdminPage/ProductionAdminPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvZHVjdGlvbkFkbWluUGFnZS9Qcm9kdWN0aW9uQWRtaW5QYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemgusev/Projects/Vika_Automate/Vika_Automate/Pages/ProviderAdminPage/ProviderAdminPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvdmlkZXJBZG1pblBhZ2UvUHJvdmlkZXJBZG1pblBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemgusev/Projects/Vika_Automate/Vika_Automate/Pages/RawMaterialAdminPage/RawMaterialAdminPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmF3TWF0ZXJpYWxBZG1pblBhZ2UvUmF3TWF0ZXJpYWxBZG1pblBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemgusev/Projects/Vika_Automate/Vika_Automate/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemgusev/Projects/Vika_Automate/Vika_Automate/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemgusev/Projects/Vika_Automate/Vika_Automate/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemgusev/Projects/Vika_Automate/Vika_Automate/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-pwpn4hux1h
